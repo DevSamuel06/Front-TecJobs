@@ -46,13 +46,16 @@ main {
     }
 
     .img {
-      height: 800px;
-      width: 800px;
+      height: 600px;
+      width: 600px;
       margin-top: 20px;
     }
 
-
+    @media screen and (max-width: 768px) {
+      .img {
+        height: 300px;
+        width: 300px;
+      }
+    }
   }
-
-
 }
