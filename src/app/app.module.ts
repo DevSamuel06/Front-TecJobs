@@ -5,17 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InicialComponent } from './paginas/inicial/inicial.component';
+import { SobreComponent } from './paginas/sobre/sobre.component';
+import { VagasComponent } from './paginas/vagas/vagas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     InicialComponent,
+    SobreComponent,
+    VagasComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
