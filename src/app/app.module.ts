@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InicialComponent } from './paginas/inicial/inicial.component';
 import { SobreComponent } from './paginas/sobre/sobre.component';
 import { VagasComponent } from './paginas/vagas/vagas.component';
+import { PesquisaVagaComponent } from './paginas/pesquisa-vaga/pesquisa-vaga.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { VagasComponent } from './paginas/vagas/vagas.component';
     InicialComponent,
     SobreComponent,
     VagasComponent,
+    PesquisaVagaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
