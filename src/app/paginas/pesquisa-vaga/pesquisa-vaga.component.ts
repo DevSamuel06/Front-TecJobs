@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './pesquisa-vaga.component.scss'
 })
 export class PesquisaVagaComponent {
-
+  readonly meninoImg: string = "../../../assets/img/binoculo2.png";
 }

@@ -2,14 +2,16 @@
   <div class="back">
     <div class="pesquisa">
       <h1>Encontre sua vaga de emprego</h1>
-      <form>
-        <div>
-          <input class="caixa" type="text">
-          <img src="../../../assets/img/lupa.png">
-          <button class="botao" type="button">Buscar</button>
-        </div>
-      </form>
       
+      <div class="search-container">
+        <input type="text" placeholder="Pesquisar...">
+        <button type="submit"><img src="../../../assets/img/lupa.png" alt="Pesquisar">Buscar</button>
+      </div>
+      
+    </div>
+
+    <div class="image">
+      <img [src]="meninoImg"  alt="">
     </div>
   </div>
 </main>
