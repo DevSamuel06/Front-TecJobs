@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class PesquisaVagaComponent {
   readonly meninoImg: string = "../../../assets/img/binoculo2.png";
+  readonly lupaImg: string = "../../../assets/img/lupa.png";
 }
