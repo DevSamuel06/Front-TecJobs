@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 export class SobreComponent {
 
   readonly homemImg : string = "../../../assets/img/homem.png"
+  readonly logoImg: string = "../../assets/img/logo.png";
 
 }

@@ -27,13 +27,11 @@ main {
     }
 
     h1 {
-      font-size: 90px;
+      font-size: 60px;
     }
   }
 
   .info {
-    margin-top: 5%;
-
     h1 {
       font-size: 70px;
     }
@@ -45,7 +43,6 @@ main {
 
     @media screen and (max-width: 1366px) {
       .titulo {
-        margin-top: 5%;
         h1 {
           font-size: 35px;
         }
@@ -56,5 +53,19 @@ main {
       }
 
     }
+  }
+}
+footer {
+  text-align: center;
+
+  background-color: black;
+
+  span {
+    font-size: 25px;
+  }
+
+  img {
+    width: 2%;
+    height: 2%;
   }
 }

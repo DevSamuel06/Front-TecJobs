@@ -8,6 +8,8 @@ import { InicialComponent } from './paginas/inicial/inicial.component';
 import { SobreComponent } from './paginas/sobre/sobre.component';
 import { VagasComponent } from './paginas/vagas/vagas.component';
 import { PesquisaVagaComponent } from './paginas/pesquisa-vaga/pesquisa-vaga.component';
+import { FatecComponent } from './paginas/fatec/fatec.component';
+
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { PesquisaVagaComponent } from './paginas/pesquisa-vaga/pesquisa-vaga.com
     SobreComponent,
     VagasComponent,
     PesquisaVagaComponent,
+    FatecComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

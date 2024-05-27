@@ -17,7 +17,12 @@ export class NavbarComponent {
   }
 
   navigateToAbout() {
-    this.router.navigate(['/sobre']); // Navega para a página "Sobre nós"
+    this.router.navigate(['/sobre']);
   }
+
+  navigateTofatec() {
+    this.router.navigate(['/fatec']);
+  }
+  
 }
 
