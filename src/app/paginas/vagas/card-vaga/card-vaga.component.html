@@ -1,0 +1,18 @@
+<main>
+
+  <div *ngFor="let vagas of vagas" class="job-card">
+    <div class="job-card-header">
+      <h2>{{vagas.tipo}}</h2>
+      <p>{{vagas.local}}</p>
+    </div>
+    <div class="job-card-body">
+      <p class="job-description">{{vagas.decricao}}</p>
+      <p class="job-details">Salário:{{vagas.salario}}</p>
+      <p class="job-details">Tipo de contrato:{{vagas.contrato}}</p>
+    </div>
+    <div class="job-card-footer">
+      <a routerLink="/detalhamento" class="apply-button">Aplicar Agora</a>
+    </div>
+  </div>
+
+</main>
