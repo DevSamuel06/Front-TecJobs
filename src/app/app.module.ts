@@ -13,6 +13,7 @@ import { FatecComponent } from './paginas/fatec/fatec.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { CardVagaComponent } from './paginas/vagas/card-vaga/card-vaga.component';
 import { DetalhamentoComponent } from './paginas/vagas/detalhamento/detalhamento.component';
+import { CadastroVagasComponent } from './paginas/login/cadastro-vagas/cadastro-vagas.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { DetalhamentoComponent } from './paginas/vagas/detalhamento/detalhamento
     LoginComponent,
     CardVagaComponent,
     DetalhamentoComponent,
+    CadastroVagasComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

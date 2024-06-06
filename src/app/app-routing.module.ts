@@ -7,6 +7,7 @@ import { PesquisaVagaComponent } from './paginas/pesquisa-vaga/pesquisa-vaga.com
 import { FatecComponent } from './paginas/fatec/fatec.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { DetalhamentoComponent } from './paginas/vagas/detalhamento/detalhamento.component';
+import { CadastroVagasComponent } from './paginas/login/cadastro-vagas/cadastro-vagas.component';
 
 const routes: Routes = [
   { path: "", component: InicialComponent, data: { animation: 'fadeInOut' } },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: "fatec", component: FatecComponent, data: { animation: 'fadeInOut' } },
   { path: "login", component: LoginComponent, data: { animation: 'fadeInOut' } },
   { path: "detalhamento", component: DetalhamentoComponent, data: { animation: 'fadeInOut' } },
+  { path: "cadastro", component: CadastroVagasComponent, data: { animation: 'fadeInOut' } },
 ];
 
 @NgModule({

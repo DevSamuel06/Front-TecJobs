@@ -1,0 +1,38 @@
+
+<body>
+    <div class="container">
+        <h1>Cadastro de Vagas</h1>
+        <form>
+            <div class="form-group">
+                <label for="titulo">Título da Vaga</label>
+                <input type="text" id="titulo" name="titulo" required placeholder="Ex. Front-end Jr">
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo de Vaga</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="backend">Back-end</option>
+                    <option value="frontend">Front-end</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="localizacao">Localização</label>
+                <input type="text" id="localizacao" name="localizacao" required placeholder="São Paulo-SP">
+            </div>
+            <div class="form-group">
+                <label for="data-publicacao">Data de Publicação</label>
+                <input type="date" id="data-publicacao" name="data-publicacao" required>
+            </div>
+            <div class="form-group">
+                <label for="requisitos">Requisitos</label>
+                <textarea id="requisitos" name="requisitos" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="salario">Salário</label>
+                <input type="text" id="salario" name="salario" required placeholder="R$1500 - 4000">
+            </div>
+            <button type="submit">Cadastrar Vaga</button>
+        </form>
+    </div>
+</body>
+
