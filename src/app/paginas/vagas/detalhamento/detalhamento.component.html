@@ -1,14 +1,30 @@
-<div class="container">
+<main>
+  <div class="container">
+    <div class="titulo">
+      <h1>{{vagas[0].tipo}}</h1>
+      <h6>Local:{{vagas[0].local}}</h6>
+      <h6>Salário:{{vagas[0].salario}}</h6>
+    </div>
 
-  <div class="dado">
-    <div class="fds">
-      <p><img [src]="cifraoImg">Sálario:</p>
-      <p><img [src]="localImg">Localização:</p>
+    <div class="desc">
+      <div class="caixa1">
+        <h1>Sobre a vaga</h1>
+        <h4>Descrição:</h4>
+        <h5>{{vagas[0].descricao}}</h5>
+        <h4>Beneficos: </h4>
+        <ul>
+          <li *ngFor="let beneficos of vagas[0].beneficio">{{ beneficos }}</li>
+        </ul>
+        <h4>Requisitos: </h4>
+        <ul>
+          <li *ngFor="let requisito of vagas[0].requisitos">{{ requisito }}</li>
+        </ul>
+        <h6>Data de publicação:{{vagas[0].dataPubli}}</h6>
+      </div>
+
+      <div class="caixa2">
+        <button>Candidatar-se</button>
+      </div>
     </div>
   </div>
-
-  <div class="desc">
-    <h1>Descrição da vaga</h1>
-    <p>Aqui vai a descrição</p>
-  </div>
-</div>
+</main>
