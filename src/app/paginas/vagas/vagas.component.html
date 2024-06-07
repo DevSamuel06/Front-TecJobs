@@ -5,18 +5,19 @@
       <p>ESCOLHA UM TIPO DE VAGA</p>
     </div>
     <div class="filtro">
-      <a routerLink="/pesquisa" class="link">
+      <a [routerLink]="['/pesquisa']" class="link">
         <img [src]="computerImg">
         <span>Back-end</span>
       </a>
-      <a routerLink="/pesquisa" class="link">
+      <a [routerLink]="['/pesquisa']" class="link">
         <img [src]="computerImg">
         <span>Front-end</span>
       </a>
-      <a routerLink="/pesquisa" class="link">
+      <a [routerLink]="['/pesquisa']" class="link">
         <img [src]="computerImg">
         <span>Outros</span>
       </a>
     </div>
+    
   </div>
 </main>

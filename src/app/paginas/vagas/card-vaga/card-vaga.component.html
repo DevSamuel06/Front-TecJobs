@@ -1,18 +1,16 @@
 <main>
-
-  <div *ngFor="let vagas of vagas" class="job-card">
+  <div *ngFor="let vaga of vagas" class="job-card">
     <div class="job-card-header">
-      <h2>{{vagas.tipo}}</h2>
-      <p>{{vagas.local}}</p>
+      <h2>{{ vaga.tipo }}</h2>
+      <p>{{ vaga.local }}</p>
     </div>
     <div class="job-card-body">
-      <p class="job-description">{{vagas.decricao}}</p>
-      <p class="job-details">Salário:{{vagas.salario}}</p>
-      <p class="job-details">Tipo de contrato:{{vagas.contrato}}</p>
+      <p class="job-description">{{ vaga.descricao }}</p>
+      <p class="job-details">Salário: {{ vaga.salario }}</p>
+      <p class="job-details">Tipo de contrato: {{ vaga.contrato }}</p>
     </div>
     <div class="job-card-footer">
       <a routerLink="/detalhamento" class="apply-button">Aplicar Agora</a>
     </div>
   </div>
-
 </main>

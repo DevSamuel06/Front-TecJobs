@@ -10,14 +10,15 @@ import { DetalhamentoComponent } from './paginas/vagas/detalhamento/detalhamento
 import { CadastroVagasComponent } from './paginas/login/cadastro-vagas/cadastro-vagas.component';
 
 const routes: Routes = [
-  { path: "", component: InicialComponent, data: { animation: 'fadeInOut' } },
-  { path: "sobre", component: SobreComponent, data: { animation: 'fadeInOut' } },
-  { path: "vagas", component: VagasComponent, data: { animation: 'fadeInOut' } },
-  { path: "pesquisa", component: PesquisaVagaComponent, data: { animation: 'fadeInOut' } },
-  { path: "fatec", component: FatecComponent, data: { animation: 'fadeInOut' } },
-  { path: "login", component: LoginComponent, data: { animation: 'fadeInOut' } },
-  { path: "detalhamento", component: DetalhamentoComponent, data: { animation: 'fadeInOut' } },
-  { path: "cadastro", component: CadastroVagasComponent, data: { animation: 'fadeInOut' } },
+  { path: "", component: InicialComponent},
+  { path: "sobre", component: SobreComponent},
+  { path: "vagas", component: VagasComponent},
+  { path: "pesquisa", component: PesquisaVagaComponent},
+  { path: "fatec", component: FatecComponent},
+  { path: "login", component: LoginComponent},
+  { path: "detalhamento", component: DetalhamentoComponent},
+  { path: "cadastro", component: CadastroVagasComponent},
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
