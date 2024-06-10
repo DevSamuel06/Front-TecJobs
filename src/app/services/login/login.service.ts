@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   validaLogin(user: string, password: string): Observable<any> {
-    const url = `${this.baseUrl}/login`;
+    const url = `${this.baseUrl}/users/login`;
     const body = { user, password };
     return this.http.post<any>(url, body);
   }
