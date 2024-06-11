@@ -13,7 +13,6 @@ export class PesquisaVagaComponent implements OnInit{
   readonly lupaImg: string = "../../../assets/img/lupa.png";
 
   vagas: any[] = [];
-  tipo: string | null = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -22,21 +21,18 @@ export class PesquisaVagaComponent implements OnInit{
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.tipo = params.get('tipo');
-      this.buscarVagas();
+      const tipo = params.get('tipo');
+      if (tipo && tipo !== 'outros') {
+        this.buscaVagasService.getVagas(tipo).subscribe(vagas => {
+          this.vagas = vagas;
+        });
+      } else {
+        this.buscaVagasService.getVagas().subscribe(vagas => {
+          this.vagas = vagas;
+          console.log("outros tá funcionando")
+        });
+      }
     });
-  }
-
-  buscarVagas(): void {
-    if (this.tipo) {
-      this.buscaVagasService.getVagas(this.tipo).subscribe(data => {
-        this.vagas = Array.isArray(data) ? data : [];
-      });
-    } else {
-      this.buscaVagasService.getVagas().subscribe(data => {
-        this.vagas = Array.isArray(data) ? data : [];
-      });
-    }
   }
 }
 

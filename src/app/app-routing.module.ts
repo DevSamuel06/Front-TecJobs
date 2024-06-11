@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: "", component: InicialComponent},
   { path: "sobre", component: SobreComponent},
   { path: "vagas", component: VagasComponent},
+  { path: "pesquisa/:tipo", component: PesquisaVagaComponent},
   { path: "pesquisa", component: PesquisaVagaComponent},
   { path: "fatec", component: FatecComponent},
   { path: "login", component: LoginComponent},
