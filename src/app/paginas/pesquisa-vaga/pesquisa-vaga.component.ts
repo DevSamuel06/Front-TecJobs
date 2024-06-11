@@ -5,9 +5,9 @@ import { BuscaVagasService } from '../../services/vagas/busca-vagas.service';
 @Component({
   selector: 'app-pesquisa-vaga',
   templateUrl: './pesquisa-vaga.component.html',
-  styleUrl: './pesquisa-vaga.component.scss'
+  styleUrls: ['./pesquisa-vaga.component.scss']
 })
-export class PesquisaVagaComponent implements OnInit{
+export class PesquisaVagaComponent implements OnInit {
 
   readonly meninoImg: string = "../../../assets/img/binoculo2.png";
   readonly lupaImg: string = "../../../assets/img/lupa.png";
@@ -21,18 +21,12 @@ export class PesquisaVagaComponent implements OnInit{
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const tipo = params.get('tipo');
-      if (tipo && tipo !== 'outros') {
-        this.buscaVagasService.getVagas(tipo).subscribe(vagas => {
-          this.vagas = vagas;
-        });
-      } else {
-        this.buscaVagasService.getVagas().subscribe(vagas => {
-          this.vagas = vagas;
-          console.log("outros tá funcionando")
-        });
-      }
+      const tipo = params.get('tipo')?? undefined;
+      console.log(`Tipo de vaga: ${tipo}`); // Log para depuração
+      this.buscaVagasService.getVagas(tipo).subscribe(vagas => {
+        console.log('Vagas fetched:', vagas); // Log para depuração
+        this.vagas = vagas;
+      });
     });
   }
 }
-

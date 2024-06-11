@@ -7,21 +7,20 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BuscaVagasService {
+  
   private apiUrl: string = 'https://backend-pi-node.onrender.com/vagas';
 
   constructor(private http: HttpClient) { }
 
   getVagas(tipo?: string): Observable<any[]> {
-    if (tipo) {
-      return this.http.get<any[]>(`${this.apiUrl}/${tipo}`).pipe(
-        map(response => Array.isArray(response) ? response : []),
-        catchError(() => of([]))
-      );
-    } else {
-      return this.http.get<any[]>(this.apiUrl).pipe(
-        map(response => Array.isArray(response) ? response : []),
-        catchError(() => of([]))
-      );
-    }
+    const url = tipo ? `${this.apiUrl}/${tipo}` : this.apiUrl;
+    console.log(`Fetching vagas from URL: ${url}`); // Log para depuração
+    return this.http.get<any[]>(url).pipe(
+      map(response => Array.isArray(response) ? response : []),
+      catchError(error => {
+        console.error('Error fetching vagas:', error); // Log para depuração
+        return of([]);
+      })
+    );
   }
 }

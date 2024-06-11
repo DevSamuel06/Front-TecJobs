@@ -10,7 +10,7 @@
       <p class="job-details">Tipo de contrato: {{ vaga.contrato }}</p>
     </div>
     <div class="job-card-footer">
-      <a routerLink="/detalhamento" class="apply-button">Aplicar Agora</a>
+      <a [routerLink]="['/detalhamento', vaga.id]" class="apply-button">Aplicar Agora</a>
     </div>
   </div>
 </main>
