@@ -1,24 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BuscaVagasService } from '../../../services/vagas/busca-vagas.service';
 
 @Component({
   selector: 'app-detalhamento',
   templateUrl: './detalhamento.component.html',
   styleUrl: './detalhamento.component.scss'
 })
-export class DetalhamentoComponent {
+export class DetalhamentoComponent implements OnInit {
   readonly cifraoImg: string = "../../../../assets/img/cifrao.png";
   readonly localImg: string = "../../../../assets/img/pin-de-localizacao.png";
 
-  vagas = [
-    {
-      tipo: "Desenvolvedor Front-end", 
-      local: "São Paulo, SP", 
-      descricao: "Estamos procurando um desenvolvedor front-end talentoso para se juntar à nossa equipe. Você será responsável por criar interfaces de usuário incríveis.",
-      beneficio: ["Vale alimentação", "Vale transporte", "PLR"],
-      salario: "R$ 6.000 - R$ 8.000", 
-      requisitos: ["Conhecimentos em Angular", "typescript" ,  "bootstrap"],
-      dataPubli: "26/05/2024"
-    }
-  ];
+  vaga: any;
+
+  constructor(
+    private route: ActivatedRoute,
+    private buscaVagasService: BuscaVagasService
+  ) { }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.buscaVagasService.getVagaPorId(id).subscribe(vaga => {
+          this.vaga = vaga;
+        });
+      }
+    });
+  }
 
 }

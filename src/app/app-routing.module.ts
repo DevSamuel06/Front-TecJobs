@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: "fatec", component: FatecComponent},
   { path: "login", component: LoginComponent},
   { path: "detalhamento", component: DetalhamentoComponent},
+  { path: "detalhamento/:id", component: DetalhamentoComponent},
   { path: "cadastro", component: CadastroVagasComponent},
   { path: '**', redirectTo: '' }
 ];

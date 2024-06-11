@@ -1,25 +1,25 @@
-<main>
+<main *ngIf="vaga">
   <div class="container">
     <div class="titulo">
-      <h1>{{vagas[0].tipo}}</h1>
-      <h6>Local:{{vagas[0].local}}</h6>
-      <h6>Salário:{{vagas[0].salario}}</h6>
+      <h1>{{vaga.tipo}}</h1>
+      <h6>Local: {{vaga.local}}</h6>
+      <h6>Salário: {{vaga.salario}}</h6>
     </div>
 
     <div class="desc">
       <div class="caixa1">
         <h1>Sobre a vaga</h1>
         <h4>Descrição:</h4>
-        <h5>{{vagas[0].descricao}}</h5>
-        <h4>Beneficos: </h4>
+        <h5>{{vaga.descricao}}</h5>
+        <h4>Benefícios: </h4>
         <ul>
-          <li *ngFor="let beneficos of vagas[0].beneficio">{{ beneficos }}</li>
+          <li *ngFor="let beneficio of vaga.beneficio">{{ beneficio }}</li>
         </ul>
         <h4>Requisitos: </h4>
         <ul>
-          <li *ngFor="let requisito of vagas[0].requisitos">{{ requisito }}</li>
+          <li *ngFor="let requisito of vaga.requisitos">{{ requisito }}</li>
         </ul>
-        <h6>Data de publicação:{{vagas[0].dataPubli}}</h6>
+        <h6>Data de publicação: {{vaga.dataPubli}}</h6>
       </div>
 
       <div class="caixa2">
