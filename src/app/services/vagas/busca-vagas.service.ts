@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,11 @@ export class BuscaVagasService {
     const url = tipo ? `${this.apiUrl}/${tipo}` : this.apiUrl;
     console.log(`Fetching vagas from URL: ${url}`); // Log para depuração
     return this.http.get<any[]>(url).pipe(
-      map(response => Array.isArray(response) ? response : []),
+      map((response: any) =>{ 
+       const {vagas} = response
+        console.log("res ",vagas)
+        return vagas;
+      }),
       catchError(error => {
         console.error('Error fetching vagas:', error); // Log para depuração
         return of([]);

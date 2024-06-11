@@ -1,13 +1,12 @@
 <main>
   <div *ngFor="let vaga of vagas" class="job-card">
     <div class="job-card-header">
-      <h2>{{ vaga.tipo }}</h2>
-      <p>{{ vaga.local }}</p>
+      <h2>{{ vaga.titulo }}</h2>
+      <p>{{ vaga.localizacao }}</p>
     </div>
     <div class="job-card-body">
       <p class="job-description">{{ vaga.descricao }}</p>
       <p class="job-details">Salário: {{ vaga.salario }}</p>
-      <p class="job-details">Tipo de contrato: {{ vaga.contrato }}</p>
     </div>
     <div class="job-card-footer">
       <a [routerLink]="['/detalhamento', vaga.id]" class="apply-button">Aplicar Agora</a>
