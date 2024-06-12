@@ -8,12 +8,12 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class BuscaVagasService {
 
-  private apiUrl: string = 'https://backend-pi-node.onrender.com';
+  private apiUrl: string = 'https://backend-pi-node.onrender.com/vagas';
 
   constructor(private http: HttpClient) { }
 
   getVagas(tipo?: string): Observable<any[]> {
-    const url = tipo ? `${this.apiUrl}/vagas/${tipo}` : this.apiUrl;
+    const url = tipo ? `${this.apiUrl}/${tipo}` : this.apiUrl;
     console.log(`Fetching vagas from URL: ${url}`); // Log para depuração
     return this.http.get<any[]>(url).pipe(
       map((response: any) => {

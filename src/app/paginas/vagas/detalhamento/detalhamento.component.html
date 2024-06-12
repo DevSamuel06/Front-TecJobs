@@ -1,8 +1,8 @@
 <main *ngIf="vaga">
   <div class="container">
     <div class="titulo">
-      <h1>{{vaga.tipo}}</h1>
-      <h6>Local: {{vaga.local}}</h6>
+      <h1>{{vaga.titulo}}</h1>
+      <h6>Local: {{vaga.localizacao}}</h6>
       <h6>Salário: {{vaga.salario}}</h6>
     </div>
 
@@ -11,19 +11,15 @@
         <h1>Sobre a vaga</h1>
         <h4>Descrição:</h4>
         <h5>{{vaga.descricao}}</h5>
-        <h4>Benefícios: </h4>
-        <ul>
-          <li *ngFor="let beneficio of vaga.beneficio">{{ beneficio }}</li>
-        </ul>
         <h4>Requisitos: </h4>
-        <ul>
-          <li *ngFor="let requisito of vaga.requisitos">{{ requisito }}</li>
-        </ul>
-        <h6>Data de publicação: {{vaga.dataPubli}}</h6>
+        <h5>{{vaga.requisitos}}</h5>
+        <h6>Data de publicação: {{vaga.data_publicacao | date:'dd/MM/yyyy'}}</h6>
       </div>
 
       <div class="caixa2">
-        <button>Candidatar-se</button>
+        <a [href]="vaga.link" target="_blank">
+          <button>Candidatar-se</button>
+        </a>
       </div>
     </div>
   </div>

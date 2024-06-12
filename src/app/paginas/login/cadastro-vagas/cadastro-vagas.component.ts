@@ -16,6 +16,7 @@ export class CadastroVagasComponent implements OnInit {
       titulo: ['', Validators.required],
       tipo: ['', Validators.required],
       localizacao: ['', Validators.required],
+      link: ['', Validators.required],
       dataPublicacao: ['', Validators.required],
       requisitos: ['', Validators.required],
       salario: ['', Validators.required],
