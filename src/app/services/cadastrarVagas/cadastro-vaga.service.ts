@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CadastroVagaService {
 
-  private apiUrl = 'https://backend-pi-node.onrender.com/insert';
+  private apiUrl = 'https://backend-pi-node.onrender.com/vagas/inserir';
 
   constructor(private http: HttpClient) { }
 
