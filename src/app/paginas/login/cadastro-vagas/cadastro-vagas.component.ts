@@ -5,7 +5,7 @@ import { CadastroVagaService } from '../../../services/cadastrarVagas/cadastro-v
 @Component({
   selector: 'app-cadastro-vagas',
   templateUrl: './cadastro-vagas.component.html',
-  styleUrl: './cadastro-vagas.component.scss'
+  styleUrls: ['./cadastro-vagas.component.scss']  // Corrigido o nome para styleUrls
 })
 export class CadastroVagasComponent implements OnInit {
 
@@ -14,12 +14,13 @@ export class CadastroVagasComponent implements OnInit {
   constructor(private fb: FormBuilder, private cadastroVagaService: CadastroVagaService) {
     this.vagaForm = this.fb.group({
       titulo: ['', Validators.required],
-      tipo: ['', Validators.required],
+      descricao: ['', Validators.required],
       localizacao: ['', Validators.required],
       link: ['', Validators.required],
-      dataPublicacao: ['', Validators.required],
+      data_publicacao: ['', Validators.required],
       requisitos: ['', Validators.required],
       salario: ['', Validators.required],
+      emprego_id: [1, Validators.required]  // Garantir que emprego_id é requerido
     });
   }
 
@@ -27,11 +28,24 @@ export class CadastroVagasComponent implements OnInit {
 
   onSubmit(): void {
     if (this.vagaForm.valid) {
-      this.cadastroVagaService.cadastrarVaga(this.vagaForm.value).subscribe(response => {
+      const formValue = this.vagaForm.value;
+
+      // Converte descricao, emprego_id e salario para números
+
+      formValue.emprego_id = Number(formValue.emprego_id);
+
+      this.cadastroVagaService.cadastrarVaga(formValue).subscribe(response => {
         console.log('Vaga cadastrada com sucesso!', response);
       }, error => {
         console.error('Erro ao cadastrar vaga', error);
       });
     }
   }
+
+
+  // // Função para converter o salário em número
+  // convertSalarioToNumber(salario: string): number {
+  //   // Remove caracteres não numéricos (exceto pontos e vírgulas) e converte para número
+  //   return Number(salario.replace(/[^\d.-]/g, ''));
+  // }
 }
